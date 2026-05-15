@@ -1,256 +1,318 @@
-// script.js
+// script.js — Mania de Brownie | Versão Final
 
-// ---------- DADOS ----------
-const flavors = [
+'use strict';
+
+// ================================================================
+// 1. DADOS COM LINKAGEM DAS IMAGENS JÁ DEFINIDA
+// ================================================================
+// LISTA DE NOMES DAS IMAGENS PARA SALVAR:
+// 
+// logo-brownie.png      -> Logo do site (ícone do círculo)
+// hero-brownie.jpg      -> Hero principal (foto do brownie em destaque)
+// bruna.jpg             -> Foto da Bruna (seção Sobre Mim)
+// tradicional.jpg       -> Brownie Tradicional
+// brigadeiro.jpg        -> Brownie de Brigadeiro  
+// ninho.jpg             -> Brownie de Ninho
+// oreo.jpg              -> Brownie de Oreo
+// prestigio.jpg         -> Brownie de Prestígio
+// doce-de-leite.jpg     -> Brownie de Doce de Leite
+// ovomaltine.jpg        -> Brownie de Ovomaltine
+// ================================================================
+
+const FLAVORS = [
   {
-    title: "O AUTÊNTICO:",
-    highlight: "BROWNIE TRADICIONAL",
-    description: "A experiência pura do nosso chocolate nobre em uma massa ultra molhadinha.",
-    price: "R$ 5,00",
-    image: "https://placehold.co/500x500/42160B/DEA85C?text=Tradicional",
-    whatsappLink: "https://wa.me/558594116448?text=Ola!%20Vi%20no%20site%20e%20quero%20o%20Brownie%20Tradicional!"
+    label: 'O Autêntico',
+    title: 'Brownie Tradicional',
+    desc:  'Massa molhadinha com chocolate nobre e casquinha crocante. O clássico que conquista.',
+    price: 'R$ 5,00',
+    img:   './assets/tradicional.jpg',
+    link:  'https://wa.me/558594116448?text=Ola!%20Quero%20o%20Brownie%20Tradicional!'
   },
   {
-    title: "A PAIXÃO:",
-    highlight: "BROWNIE DE BRIGADEIRO",
-    description: "A união irresistível entre a nossa massa e um brigadeiro artesanal cremoso.",
-    price: "R$ 6,00",
-    image: "https://placehold.co/500x500/42160B/DEA85C?text=Brigadeiro",
-    whatsappLink: "https://wa.me/558594116448?text=Preciso%20do%20Brownie%20de%20Brigadeiro!"
+    label: 'A Paixão',
+    title: 'Brownie de Brigadeiro',
+    desc:  'Massa de chocolate meio amargo com brigadeiro artesanal cremoso e aveludado.',
+    price: 'R$ 6,00',
+    img:   './assets/brigadeiro.jpg',
+    link:  'https://wa.me/558594116448?text=Preciso%20do%20Brownie%20de%20Brigadeiro!'
   },
   {
-    title: "O QUERIDINHO:",
-    highlight: "BROWNIE DE NINHO",
-    description: "Massa intensa recheada com um creme de Ninho suave que derrete na boca.",
-    price: "R$ 6,00",
-    image: "https://placehold.co/500x500/42160B/DEA85C?text=Ninho",
-    whatsappLink: "https://wa.me/558594116448?text=Quero%20garantir%20o%20meu%20Brownie%20de%20Ninho!"
+    label: 'O Queridinho',
+    title: 'Brownie de Ninho',
+    desc:  'Contraste perfeito: massa escura intensa com recheio cremoso de Leite Ninho.',
+    price: 'R$ 6,00',
+    img:   './assets/ninho.jpg',
+    link:  'https://wa.me/558594116448?text=Quero%20o%20Brownie%20de%20Ninho!'
   },
   {
-    title: "A EXPLOSÃO:",
-    highlight: "BROWNIE DE OREO",
-    description: "A crocância do Oreo mergulhada em um recheio cremoso e nossa massa secreta.",
-    price: "R$ 6,00",
-    image: "https://placehold.co/500x500/42160B/DEA85C?text=Oreo",
-    whatsappLink: "https://wa.me/558594116448?text=Quero%20o%20Brownie%20de%20Oreo!"
+    label: 'A Explosão',
+    title: 'Brownie de Oreo',
+    desc:  'Massa molhadinha com recheio de baunilha e a crocância do biscoito Oreo.',
+    price: 'R$ 6,00',
+    img:   './assets/oreo.jpg',
+    link:  'https://wa.me/558594116448?text=Quero%20o%20Brownie%20de%20Oreo!'
   },
   {
-    title: "O CONFORTO:",
-    highlight: "BROWNIE DE DOCE DE LEITE",
-    description: "Recheio generoso de doce de leite premium. Aquele sabor que abraça o paladar.",
-    price: "R$ 6,00",
-    image: "https://placehold.co/500x500/42160B/DEA85C?text=Doce+de+Leite",
-    whatsappLink: "https://wa.me/558594116448?text=Quero%20o%20Brownie%20de%20Doce%20de%20Leite!"
+    label: 'O Tropical',
+    title: 'Brownie de Prestígio',
+    desc:  'Chocolate nobre com beijinho cremoso e coco ralado. Frescor tropical.',
+    price: 'R$ 6,00',
+    img:   './assets/prestigio.jpg',
+    link:  'https://wa.me/558594116448?text=Quero%20o%20Brownie%20de%20Prestigio!'
   },
   {
-    title: "O TROPICAL:",
-    highlight: "BROWNIE DE PRESTÍGIO",
-    description: "A combinação clássica de coco fresco com chocolate nobre. Textura incrível.",
-    price: "R$ 6,00",
-    image: "https://placehold.co/500x500/42160B/DEA85C?text=Prestigio",
-    whatsappLink: "https://wa.me/558594116448?text=Quero%20o%20Brownie%20de%20Prestigio!"
+    label: 'O Conforto',
+    title: 'Brownie de Doce de Leite',
+    desc:  'Massa de chocolate meio amargo com camadas generosas de doce de leite cremoso.',
+    price: 'R$ 6,00',
+    img:   './assets/doce-de-leite.jpg',
+    link:  'https://wa.me/558594116448?text=Quero%20o%20Brownie%20de%20Doce%20de%20Leite!'
   },
   {
-    title: "A CROCÂNCIA:",
-    highlight: "BROWNIE DE OVOMALTINE",
-    description: "Recheio intenso e crocante de Ovomaltine que traz um sabor único.",
-    price: "R$ 6,00",
-    image: "https://placehold.co/500x500/42160B/DEA85C?text=Ovomaltine",
-    whatsappLink: "https://wa.me/558594116448?text=Quero%20o%20Brownie%20de%20Ovomaltine!"
+    label: 'A Intensidade',
+    title: 'Brownie de Ovomaltine',
+    desc:  'Recheio cremoso com a crocância única e o sabor inconfundível do Ovomaltine.',
+    price: 'R$ 6,00',
+    img:   './assets/ovomaltine.jpg',
+    link:  'https://wa.me/558594116448?text=Quero%20o%20Brownie%20de%20Ovomaltine!'
   }
 ];
 
-const feedbacksLTR = [
-  "O melhor que já comi! A massa é surreal de molhadinha.",
-  "Viciada nesse Ninho Cremoso... É um caminho sem volta!",
-  "Simplesmente divino! O de Oreo é uma experiência.",
-  "O ponto perfeito do chocolate. Nota 10!",
-  "Gosto de infância com toque gourmet.",
-  "Não existe brownie melhor!",
-  "A casquinha crocante é o meu ponto fraco.",
-  "O recheio de Nutella é generoso demais.",
-  "Dá para ver que é feito com muito amor.",
-  "Comprei para presente e a pessoa amou.",
+// FEEDBACKS - VELOCIDADE AUMENTADA (25s no CSS)
+const FEEDBACKS_LTR = [
+  'O melhor que já comi! Massa surreal de molhadinha.',
+  'Viciada no Ninho Cremoso. Caminho sem volta!',
+  'O de Oreo é uma experiência divina.',
+  'Ponto perfeito do chocolate. Nota 10!',
+  'Gosto de infância com toque gourmet.',
+  'Simplesmente o melhor brownie!'
 ];
 
-const feedbacksRTL = [
-  "Ingredientes de primeira. Vale cada centavo!",
-  "O de Doce de Leite tem gosto de abraço.",
-  "Já virei cliente fiel da Mania!",
-  "Textura de outro planeta. Muito macio!",
-  "O de Ovomaltine superou tudo.",
-  "Melhor sobremesa de delivery da vida.",
-  "O recheio de Prestígio é fresquinho.",
-  "Sempre peço da Mania nos eventos.",
-  "Bruna é um doce e o brownie é arte.",
-  "Fã número 1 do tradicional!",
+const FEEDBACKS_RTL = [
+  'Casquinha crocante é meu ponto fraco.',
+  'Recheio generoso demais. Amei!',
+  'Feito com muito amor, dá pra sentir.',
+  'Ingredientes premium. Vale cada centavo!',
+  'Doce de Leite tem gosto de abraço.',
+  'Textura de outro planeta. Muito macio!'
 ];
 
-// ---------- FUNÇÕES AUXILIARES ----------
-function createFlavorCard(flavor) {
-  const card = document.createElement('div');
-  card.className = 'flavor-card group';
+// ================================================================
+// 2. RENDER — CARDS DE SABORES
+// ================================================================
+
+function createFlavorCard(flavor, index) {
+  const card = document.createElement('article');
+  card.className = 'flavor-card reveal';
+  card.dataset.delay = String(index * 60);
+  card.setAttribute('aria-label', flavor.title);
+
   card.innerHTML = `
-    <div class="rounded-3xl overflow-hidden aspect-square max-h-80 lg:max-h-none">
-      <img src="${flavor.image}" alt="${flavor.highlight}" class="w-full h-full object-cover">
+    <div class="flavor-img-wrap">
+      <img src="${flavor.img}" alt="${flavor.title}" loading="lazy" onerror="this.src='https://placehold.co/500x500/42160B/DEA85C?text=${encodeURIComponent(flavor.title)}'">
     </div>
-    <div class="flex flex-col justify-center gap-5 lg:gap-6">
-      <h3>${flavor.title} <span class="text-[#DEA85C]">${flavor.highlight}</span></h3>
-      <p class="text-base lg:text-lg leading-relaxed opacity-95 text-white">
-        ${flavor.description} Por apenas <strong class="text-[#DEA85C] font-bold">${flavor.price}</strong>.
+    <div class="flavor-body">
+      <span class="flavor-label">${flavor.label}</span>
+      <h3 class="flavor-title">${flavor.title}</h3>
+      <p class="flavor-desc">
+        ${flavor.desc}
+        Por apenas <span class="flavor-price">${flavor.price}</span>.
       </p>
-      <a href="${flavor.whatsappLink}" target="_blank" class="btn-card">QUERO ESTE SABOR</a>
+      <a
+        href="${flavor.link}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-card"
+        aria-label="Pedir ${flavor.title} via WhatsApp"
+      >Quero este sabor</a>
     </div>
+  `;
+
+  return card;
+}
+
+function renderFlavors() {
+  const grid = document.getElementById('flavors-grid');
+  if (!grid) return;
+
+  const fragment = document.createDocumentFragment();
+  FLAVORS.forEach((flavor, i) => fragment.appendChild(createFlavorCard(flavor, i)));
+  grid.appendChild(fragment);
+}
+
+// ================================================================
+// 3. RENDER — FEEDBACKS com estrelas SVG
+// ================================================================
+
+function createStarsSVG() {
+  return `
+    <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+    </svg>
+  `;
+}
+
+function createStarsHTML() {
+  return createStarsSVG() + createStarsSVG() + createStarsSVG() + createStarsSVG() + createStarsSVG();
+}
+
+function createFeedbackCard(text) {
+  const card = document.createElement('div');
+  card.className = 'feedback-card';
+  card.innerHTML = `
+    <div class="feedback-stars" aria-hidden="true">
+      ${createStarsHTML()}
+    </div>
+    <p class="feedback-text">&ldquo;${text}&rdquo;</p>
   `;
   return card;
 }
 
-function createFeedbackCard(text) {
-  const div = document.createElement('div');
-  div.className = 'feedback-card';
-  div.innerHTML = `&ldquo;${text}&rdquo;`;
-  return div;
-}
-
-// ---------- CARROSSEL ----------
-let currentIndex = 0;
-const track = document.getElementById('carousel-track');
-const dotsContainer = document.getElementById('carousel-dots');
-const prevBtn = document.getElementById('carousel-prev');
-const nextBtn = document.getElementById('carousel-next');
-const prevMobile = document.getElementById('carousel-prev-mobile');
-const nextMobile = document.getElementById('carousel-next-mobile');
-const wrapper = document.getElementById('carousel-wrapper');
-
-function renderCarousel() {
-  track.innerHTML = '';
-  flavors.forEach(flavor => {
-    const slide = document.createElement('div');
-    slide.className = 'flex-shrink-0 w-full px-1 lg:px-2';
-    slide.appendChild(createFlavorCard(flavor));
-    track.appendChild(slide);
-  });
-  updateCarousel();
-  renderDots();
-}
-
-function renderDots() {
-  dotsContainer.innerHTML = '';
-  flavors.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = `carousel-dot ${i === currentIndex ? 'active' : ''}`;
-    dot.setAttribute('aria-label', `Ir para sabor ${i+1}`);
-    dot.addEventListener('click', () => goToSlide(i));
-    dotsContainer.appendChild(dot);
-  });
-}
-
-function updateCarousel() {
-  track.style.transform = `translateX(-${currentIndex * 100}%)`;
-  document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
-    dot.classList.toggle('active', i === currentIndex);
-  });
-}
-
-function goToSlide(index) {
-  if (index < 0) index = flavors.length - 1;
-  if (index >= flavors.length) index = 0;
-  currentIndex = index;
-  updateCarousel();
-}
-
-function nextSlide() { goToSlide(currentIndex + 1); }
-function prevSlide() { goToSlide(currentIndex - 1); }
-
-// Touch events
-let touchStartX = 0;
-let touchEndX = 0;
-wrapper.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
-wrapper.addEventListener('touchmove', e => { touchEndX = e.touches[0].clientX; });
-wrapper.addEventListener('touchend', () => {
-  const diff = touchStartX - touchEndX;
-  if (Math.abs(diff) > 50) {
-    diff > 0 ? nextSlide() : prevSlide();
-  }
-});
-
-// Keyboard
-window.addEventListener('keydown', e => {
-  if (e.key === 'ArrowLeft') prevSlide();
-  if (e.key === 'ArrowRight') nextSlide();
-});
-
-// Buttons
-prevBtn.addEventListener('click', prevSlide);
-nextBtn.addEventListener('click', nextSlide);
-prevMobile.addEventListener('click', prevSlide);
-nextMobile.addEventListener('click', nextSlide);
-
-// ---------- FEEDBACKS ----------
 function renderFeedbacks() {
-  const trackLTR = document.getElementById('feedback-track-ltr');
-  const trackRTL = document.getElementById('feedback-track-rtl');
-  
-  // Duplicar para scroll infinito
-  const ltrItems = [...feedbacksLTR, ...feedbacksLTR];
-  const rtlItems = [...feedbacksRTL, ...feedbacksRTL];
-  
-  ltrItems.forEach(text => trackLTR.appendChild(createFeedbackCard(text)));
-  rtlItems.forEach(text => trackRTL.appendChild(createFeedbackCard(text)));
+  const trackLTR = document.getElementById('feedback-ltr');
+  const trackRTL = document.getElementById('feedback-rtl');
+  if (!trackLTR || !trackRTL) return;
+
+  const ltrItems = [...FEEDBACKS_LTR, ...FEEDBACKS_LTR];
+  const rtlItems = [...FEEDBACKS_RTL, ...FEEDBACKS_RTL];
+
+  const fragLTR = document.createDocumentFragment();
+  const fragRTL = document.createDocumentFragment();
+
+  ltrItems.forEach(t => fragLTR.appendChild(createFeedbackCard(t)));
+  rtlItems.forEach(t => fragRTL.appendChild(createFeedbackCard(t)));
+
+  trackLTR.appendChild(fragLTR);
+  trackRTL.appendChild(fragRTL);
 }
 
-// ---------- HEADER SCROLL ----------
-const header = document.getElementById('main-header');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 20) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
+// ================================================================
+// 4. HEADER — scroll effect
+// ================================================================
+
+function initHeaderScroll() {
+  const header = document.getElementById('main-header');
+  if (!header) return;
+
+  const update = () => header.classList.toggle('scrolled', window.scrollY > 24);
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
+// ================================================================
+// 5. MENU MOBILE
+// ================================================================
+
+function initMobileMenu() {
+  const toggle = document.getElementById('menu-toggle');
+  const menu   = document.getElementById('mobile-menu');
+  if (!toggle || !menu) return;
+
+  function closeMenu() {
+    menu.classList.remove('open');
+    toggle.classList.remove('active');
+    menu.setAttribute('aria-hidden', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
   }
-});
 
-// ---------- MENU MOBILE ----------
-const menuToggle = document.getElementById('menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-menuToggle.addEventListener('click', () => {
-  menuToggle.classList.toggle('active');
-  mobileMenu.classList.toggle('open');
-});
-// Fechar ao clicar em link
-document.querySelectorAll('.mobile-nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    menuToggle.classList.remove('active');
-    mobileMenu.classList.remove('open');
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    toggle.classList.toggle('active', isOpen);
+    menu.setAttribute('aria-hidden', String(!isOpen));
+    toggle.setAttribute('aria-expanded', String(isOpen));
   });
-});
 
-// ---------- INTERSECTION OBSERVER (fade-in) ----------
-const fadeElements = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+  menu.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
-}, { threshold: 0.2 });
-fadeElements.forEach(el => observer.observe(el));
+}
 
-// ---------- ANO ATUAL ----------
-document.getElementById('current-year').textContent = new Date().getFullYear();
+// ================================================================
+// 6. SMOOTH SCROLL
+// ================================================================
 
-// ---------- INICIALIZAÇÃO ----------
-renderCarousel();
-renderFeedbacks();
-
-// Smooth scroll para links internos (opcional)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if (href === "#" || href === "") return;
-    const target = document.querySelector(href);
-    if (target) {
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth' });
-    }
+    });
   });
+}
+
+// ================================================================
+// 7. SCROLL REVEAL
+// ================================================================
+
+function initScrollReveal() {
+  const elements = document.querySelectorAll('.reveal');
+  if (!elements.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const el    = entry.target;
+      const delay = parseInt(el.dataset.delay || '0', 10);
+
+      el.style.transitionDelay = `${delay}ms`;
+      el.classList.add('visible');
+
+      el.addEventListener('transitionend', () => {
+        el.style.transitionDelay = '0ms';
+      }, { once: true });
+
+      observer.unobserve(el);
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -30px 0px'
+  });
+
+  elements.forEach(el => observer.observe(el));
+}
+
+// ================================================================
+// 8. HOVER IMEDIATO NOS CARDS
+// ================================================================
+
+function initCardHover() {
+  const cards = document.querySelectorAll('.flavor-card, .hero-card, .sobre-card, .contato-card, .feedback-card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transitionDelay = '0ms';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transitionDelay = '0ms';
+    });
+  });
+}
+
+// ================================================================
+// 9. ANO ATUAL NO FOOTER
+// ================================================================
+
+function setCurrentYear() {
+  const el = document.getElementById('current-year');
+  if (el) el.textContent = new Date().getFullYear();
+}
+
+// ================================================================
+// 10. INICIALIZAÇÃO
+// ================================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderFlavors();
+  renderFeedbacks();
+  initHeaderScroll();
+  initMobileMenu();
+  initSmoothScroll();
+  initScrollReveal();
+  initCardHover();
+  setCurrentYear();
 });
