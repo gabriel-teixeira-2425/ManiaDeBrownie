@@ -1,178 +1,253 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mania de Brownie | Brownies Artesanais Premium</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mania de Brownie | Brownies Artesanais Premium</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ==================== HEADER ==================== -->
+    <header id="main-header">
+      <nav class="nav-container">
+        <a href="#home" class="nav-logo">
+          <div class="logo-mark">
+            <!-- IMAGEM 1: LOGO DO SITE (ícone/círculo) -->
+            <!-- Salve como: logo-brownie.png (40x40px quadrado) -->
+            <!-- A imagem será redimensionada para caber no círculo -->
+            <img src="./assets/logo-brownie.png" alt="Logo Mania de Brownie" />
+            <span class="logo-initials">MB</span>
+          </div>
+          <span class="logo-wordmark">MANIA DE BROWNIE</span>
+        </a>
 
-  <!-- ==================== HEADER ==================== -->
-  <header id="main-header">
-    <nav class="nav-container">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#sabores" class="nav-link">Sabores</a></li>
+          <li><a href="#feedbacks" class="nav-link">Feedbacks</a></li>
+          <li><a href="#sobre-mim" class="nav-link">Sobre mim</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
 
-      <a href="#home" class="nav-logo">
-        <div class="logo-mark">
-          <!-- IMAGEM 1: LOGO DO SITE (ícone/círculo) -->
-          <!-- Salve como: logo-brownie.png (40x40px quadrado) -->
-          <!-- A imagem será redimensionada para caber no círculo -->
-          <img src="./assets/logo-brownie.png" alt="Logo Mania de Brownie">
-          <span class="logo-initials">MB</span>
-        </div>
-        <span class="logo-wordmark">MANIA DE BROWNIE</span>
-      </a>
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </nav>
 
-      <ul class="nav-links">
-        <li><a href="#home"      class="nav-link">Home</a></li>
-        <li><a href="#sabores"   class="nav-link">Sabores</a></li>
-        <li><a href="#feedbacks" class="nav-link">Feedbacks</a></li>
-        <li><a href="#sobre-mim" class="nav-link">Sobre mim</a></li>
-        <li><a href="#contato"   class="nav-link">Contato</a></li>
-      </ul>
-
-      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-
-    </nav>
-
-    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
-      <ul>
-        <li><a href="#home"      class="mobile-link">Home</a></li>
-        <li><a href="#sabores"   class="mobile-link">Sabores</a></li>
-        <li><a href="#feedbacks" class="mobile-link">Feedbacks</a></li>
-        <li><a href="#sobre-mim" class="mobile-link">Sobre mim</a></li>
-        <li><a href="#contato"   class="mobile-link">Contato</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- ==================== HERO ==================== -->
-    <section id="home" class="section hero-section">
-      <div class="reveal" data-delay="0">
-        <span class="eyebrow">Artesanal &amp; Premium</span>
-        <h2 class="section-title">Home</h2>
+      <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <ul>
+          <li><a href="#home" class="mobile-link">Home</a></li>
+          <li><a href="#sabores" class="mobile-link">Sabores</a></li>
+          <li><a href="#feedbacks" class="mobile-link">Feedbacks</a></li>
+          <li><a href="#sobre-mim" class="mobile-link">Sobre mim</a></li>
+          <li><a href="#contato" class="mobile-link">Contato</a></li>
+        </ul>
       </div>
+    </header>
 
-      <div class="hero-card reveal" data-delay="80">
-        <div class="hero-image-wrap">
-          <!-- IMAGEM 2: HERO PRINCIPAL (foto do brownie em destaque) -->
-          <!-- Salve como: hero-brownie.jpg (700x700px quadrado) -->
-          <img src="./assets/hero-brownie.jpg" alt="Brownie Artesanal" class="hero-img" onerror="this.src='https://placehold.co/700x700/42160B/DEA85C?text=Brownie'">
+    <main>
+      <!-- ==================== HERO ==================== -->
+      <section id="home" class="section hero-section">
+        <div class="reveal" data-delay="0">
+          <span class="eyebrow">Artesanal &amp; Premium</span>
+          <h2 class="section-title">Home</h2>
         </div>
-        <div class="hero-content">
-          <p class="hero-kicker">A experiência que você merece</p>
-          <h1 class="hero-heading">
-            O Brownie que você não apenas come —<br>
-            você <em>vive uma experiência</em>
-          </h1>
-          <p class="hero-body">
-            Esqueça o que você já provou. Nossos brownies são ultra recheados, feitos com chocolate nobre e o carinho que você merece. Delícias clássicas por <strong class="accent">R$ 5,00</strong> e versões recheadas por apenas <strong class="accent">R$ 6,00</strong>.
+
+        <div class="hero-card reveal" data-delay="80">
+          <div class="hero-image-wrap">
+            <!-- IMAGEM 2: HERO PRINCIPAL (foto do brownie em destaque) -->
+            <!-- Salve como: hero-brownie.jpg (700x700px quadrado) -->
+            <img
+              src="./assets/hero-brownie.jpeg"
+              alt="Brownie Artesanal"
+              class="hero-img"
+              onerror="
+                this.src =
+                  'https://placehold.co/700x700/42160B/DEA85C?text=Brownie'
+              "
+            />
+          </div>
+          <div class="hero-content">
+            <p class="hero-kicker">A experiência que você merece</p>
+            <h1 class="hero-heading">
+              O Brownie que você não apenas come —<br />
+              você <em>vive uma experiência</em>
+            </h1>
+            <p class="hero-body">
+              Esqueça o que você já provou. Nossos brownies são ultra recheados,
+              feitos com chocolate nobre e o carinho que você merece. Delícias
+              clássicas por <strong class="accent">R$ 5,00</strong> e versões
+              recheadas por apenas <strong class="accent">R$ 6,00</strong>.
+            </p>
+            <a
+              href="https://wa.me/558594116448?text=Ol%C3%A1!%20Vi%20o%20site%20e%20me%20interessei%20pelos%20brownies."
+              target="_blank"
+              rel="noopener"
+              class="btn-primary"
+            >
+              Quero experimentar
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SABORES ==================== -->
+      <section id="sabores" class="section">
+        <div class="reveal" data-delay="0">
+          <span class="eyebrow">Nosso cardápio</span>
+          <h2 class="section-title">Sabores</h2>
+        </div>
+        <!-- CARDS DE SABORES GERADOS VIA JavaScript -->
+        <div class="flavors-grid" id="flavors-grid"></div>
+      </section>
+
+      <!-- ==================== FEEDBACKS ==================== -->
+      <section id="feedbacks" class="section feedback-section">
+        <div class="reveal" data-delay="0">
+          <span class="eyebrow">Depoimentos reais</span>
+          <h2 class="section-title">O que dizem os apaixonados</h2>
+        </div>
+
+        <div class="marquee-wrapper reveal" data-delay="100">
+          <div class="marquee-row">
+            <div class="marquee-track marquee-ltr" id="feedback-ltr"></div>
+          </div>
+          <div class="marquee-row">
+            <div class="marquee-track marquee-rtl" id="feedback-rtl"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SOBRE MIM ==================== -->
+
+      <section id="sobre-mim" class="section">
+        <div class="reveal" data-delay="0">
+          <span class="eyebrow">A criadora</span>
+          <h2 class="section-title">Sobre mim</h2>
+        </div>
+
+        <div class="sobre-card reveal" data-delay="100">
+          <div class="sobre-img-wrap">
+            <!-- IMAGEM 3: FOTO DA BRUNA (criadora) -->
+            <!-- Salve como: bruna.png (formato PNG com fundo transparente) -->
+            <!-- Tamanho sugerido: 400x500px (retrato) -->
+            <img
+              src="./assets/bruna.png"
+              alt="Bruna — Mania de Brownie"
+              class="sobre-img"
+              onerror="
+                this.src =
+                  'https://placehold.co/420x540/42160B/DEA85C?text=Bruna'
+              "
+            />
+          </div>
+          <div class="sobre-content">
+            <h3 class="sobre-heading">E quem está por trás da mania?</h3>
+            <p>
+              Sempre acreditei que a felicidade pode ser encontrada em pequenos
+              detalhes — e nada supera o prazer de um brownie perfeito. Me chamo
+              <strong class="accent">Bruna</strong>, e a
+              <strong class="accent">Mania de Brownie</strong> nasceu do meu
+              desejo de compartilhar a melhor experiência em chocolate que eu já
+              provei.
+            </p>
+            <p>
+              Como uma verdadeira apaixonada por doces, selecionei a dedo cada
+              sabor para garantir que você tenha em mãos um
+              <strong class="accent">produto premium</strong>, com massa densa e
+              recheios irresistíveis. Meu objetivo é facilitar o seu acesso ao
+              doce perfeito, trazendo qualidade e aquele
+              <strong class="accent">toque de carinho</strong> que transforma
+              qualquer pausa no dia em um momento especial.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== CONTATO ==================== -->
+      <section id="contato" class="section">
+        <div class="reveal" data-delay="0">
+          <span class="eyebrow">Fale conosco</span>
+          <h2 class="section-title">Pronto para garantir o seu?</h2>
+        </div>
+
+        <div class="contato-card reveal" data-delay="100">
+          <p class="contato-text">
+            Peça agora o seu brownie favorito ou tire suas dúvidas diretamente
+            com a Bruna.<br />
+            Estamos prontos para adoçar o seu dia.
           </p>
-          <a href="https://wa.me/558594116448?text=Oii,%20vi%20o%20site%20e%20me%20interessei!" target="_blank" rel="noopener" class="btn-primary">
-            Quero experimentar
-          </a>
+          <div class="contato-buttons">
+  <!-- LINKS DAS REDES SOCIAIS -->
+  <!-- Instagram: @maniadebrownie_ -->
+  <!-- WhatsApp: 85 99416-448 -->
+  <a
+    href="https://www.instagram.com/maniadebrownie.b?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+    target="_blank"
+    rel="noopener"
+    class="btn-outline"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3"
+      />
+    </svg>
+    Instagram
+  </a>
+  <a
+    href="https://wa.me/558594116448?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido."
+    target="_blank"
+    rel="noopener"
+    class="btn-primary"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      style="margin-right: 4px;"
+    >
+      <path
+        d="M12.032 2.027c-5.528 0-10.021 4.493-10.021 10.021 0 1.76.457 3.473 1.334 4.987L2 22.027l5.271-1.333c1.467.857 3.141 1.32 4.876 1.32 5.528 0 10.021-4.493 10.021-10.021 0-5.528-4.493-10.021-10.021-10.021zm0 18.038c-1.507 0-2.987-.4-4.267-1.16l-.307-.187-3.147.8.8-3.2-.2-.32c-.827-1.333-1.28-2.88-1.28-4.427 0-4.427 3.6-8.027 8.027-8.027s8.027 3.6 8.027 8.027-3.6 8.027-8.027 8.027zm4.373-6.027c-.213-.107-1.253-.613-1.44-.68-.213-.08-.36-.107-.52.107-.16.213-.613.693-.747.84-.16.16-.293.173-.533.053-.24-.107-1.013-.373-1.92-1.173-.707-.64-1.173-1.413-1.307-1.653-.133-.24-.013-.373.107-.493.107-.107.24-.267.36-.4.12-.133.16-.24.24-.4.08-.16.04-.293-.013-.427-.053-.133-.52-1.253-.693-1.693-.187-.48-.373-.373-.52-.373h-.44c-.16 0-.4.053-.613.293-.213.24-.813.8-.813 1.933 0 1.147.84 2.267.947 2.413.107.16 1.6 2.453 3.893 3.413 1.893.8 1.96.613 2.373.56.373-.053 1.2-.48 1.373-.96.16-.48.16-.893.107-.96-.027-.067-.12-.107-.347-.2z"
+      />
+    </svg>
+    Fazer pedido
+  </a>
+</div>
         </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-brand">MANIA DE BROWNIE</span>
+        <span class="footer-copy"
+          >&copy; <span id="current-year"></span> — Todos os direitos
+          reservados.</span
+        >
       </div>
-    </section>
+    </footer>
 
-    <!-- ==================== SABORES ==================== -->
-    <section id="sabores" class="section">
-      <div class="reveal" data-delay="0">
-        <span class="eyebrow">Nosso cardápio</span>
-        <h2 class="section-title">Sabores</h2>
-      </div>
-      <!-- CARDS DE SABORES GERADOS VIA JavaScript -->
-      <div class="flavors-grid" id="flavors-grid"></div>
-    </section>
-
-    <!-- ==================== FEEDBACKS ==================== -->
-    <section id="feedbacks" class="section feedback-section">
-      <div class="reveal" data-delay="0">
-        <span class="eyebrow">Depoimentos reais</span>
-        <h2 class="section-title">O que dizem os apaixonados</h2>
-      </div>
-
-      <div class="marquee-wrapper reveal" data-delay="100">
-        <div class="marquee-row">
-          <div class="marquee-track marquee-ltr" id="feedback-ltr"></div>
-        </div>
-        <div class="marquee-row">
-          <div class="marquee-track marquee-rtl" id="feedback-rtl"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SOBRE MIM ==================== -->
-
-<section id="sobre-mim" class="section">
-  <div class="reveal" data-delay="0">
-    <span class="eyebrow">A criadora</span>
-    <h2 class="section-title">Sobre mim</h2>
-  </div>
-
-  <div class="sobre-card reveal" data-delay="100">
-    <div class="sobre-img-wrap">
-      <!-- IMAGEM 3: FOTO DA BRUNA (criadora) -->
-      <!-- Salve como: bruna.png (formato PNG com fundo transparente) -->
-      <!-- Tamanho sugerido: 400x500px (retrato) -->
-      <img src="./assets/bruna.png" alt="Bruna — Mania de Brownie" class="sobre-img" onerror="this.src='https://placehold.co/420x540/42160B/DEA85C?text=Bruna'">
-    </div>
-    <div class="sobre-content">
-      <h3 class="sobre-heading">E quem está por trás da mania?</h3>
-      <p>
-        Sempre acreditei que a felicidade pode ser encontrada em pequenos detalhes — e nada supera o prazer de um brownie perfeito. Me chamo <strong class="accent">Bruna</strong>, e a <strong class="accent">Mania de Brownie</strong> nasceu do meu desejo de compartilhar a melhor experiência em chocolate que eu já provei.
-      </p>
-      <p>
-        Como uma verdadeira apaixonada por doces, selecionei a dedo cada sabor para garantir que você tenha em mãos um <strong class="accent">produto premium</strong>, com massa densa e recheios irresistíveis. Meu objetivo é facilitar o seu acesso ao doce perfeito, trazendo qualidade e aquele <strong class="accent">toque de carinho</strong> que transforma qualquer pausa no dia em um momento especial.
-      </p>
-    </div>
-  </div>
-</section>
-
-    <!-- ==================== CONTATO ==================== -->
-    <section id="contato" class="section">
-      <div class="reveal" data-delay="0">
-        <span class="eyebrow">Fale conosco</span>
-        <h2 class="section-title">Pronto para garantir o seu?</h2>
-      </div>
-
-      <div class="contato-card reveal" data-delay="100">
-        <p class="contato-text">
-          Peça agora o seu brownie favorito ou tire suas dúvidas diretamente com a Bruna.<br>
-          Estamos prontos para adoçar o seu dia.
-        </p>
-        <div class="contato-buttons">
-          <!-- LINKS DAS REDES SOCIAIS -->
-          <!-- Instagram: @maniadebrownie_ -->
-          <!-- WhatsApp: 85 99416-448 -->
-          <a href="https://www.instagram.com/maniadebrownie_/" target="_blank" rel="noopener" class="btn-outline">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3"/></svg>
-            Instagram
-          </a>
-          <a href="https://wa.me/558594116448?text=Ola,%20quero%20fazer%20um%20pedido!" target="_blank" rel="noopener" class="btn-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
-            Fazer pedido
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <span class="footer-brand">MANIA DE BROWNIE</span>
-      <span class="footer-copy">&copy; <span id="current-year"></span> — Todos os direitos reservados.</span>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
