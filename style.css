@@ -459,7 +459,7 @@ p {
 }
 
 /* ----------------------------------------------------------------
-   9. HERO CARD
+   9. HERO CARD - CORRIGIDO (IMAGEM SEM CORTE VERTICAL)
    ================================================================ */
 .hero-section {
   padding-top: 2rem;
@@ -503,14 +503,18 @@ p {
 .hero-image-wrap {
   border-radius: 1rem;
   overflow: hidden;
-  height: 260px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
 }
+
 .hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   transition: transform 0.5s ease;
 }
+
 .hero-card:hover .hero-img {
   transform: scale(1.04);
 }
@@ -1025,8 +1029,9 @@ p {
     gap: 3rem;
     padding: 3rem;
   }
+  
   .hero-image-wrap {
-    height: auto;
+    aspect-ratio: 4 / 3;
   }
 
   .flavors-grid {
@@ -1100,6 +1105,10 @@ p {
   .contato-buttons .btn-primary {
     width: 100%;
   }
+  
+  .hero-image-wrap {
+    aspect-ratio: 1 / 1;
+  }
 }
 
 /* ----------------------------------------------------------------
@@ -1108,9 +1117,5 @@ p {
 @media (max-width: 767px) {
   .hero-card {
     padding: 1.5rem;
-  }
-  
-  .hero-image-wrap {
-    height: 200px;
   }
 }
