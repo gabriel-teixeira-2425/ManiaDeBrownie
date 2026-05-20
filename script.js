@@ -41,7 +41,7 @@ const FLAVORS = [
     title: "Brownie de Ninho",
     desc: "Contraste perfeito: massa escura intensa com recheio cremoso de Leite Ninho.",
     price: "R$ 6,00",
-    img: "./assets/ninho.jpg",
+    img: "./assets/ninho.jpeg",
     link: "https://wa.me/558594116448?text=Ol%C3%A1!%20Vi%20no%20site%20o%20Brownie%20de%20Ninho%20e%20gostaria%20de%20encomendar!%20Tem%20dispon%C3%ADvel%3F",
   },
   {
@@ -49,7 +49,7 @@ const FLAVORS = [
     title: "Brownie de Oreo",
     desc: "Massa molhadinha com recheio de baunilha e a crocância do biscoito Oreo.",
     price: "R$ 6,00",
-    img: "./assets/oreo.jpg",
+    img: "./assets/oreo.jpeg",
     link: "https://wa.me/558594116448?text=Ol%C3%A1!%20Vi%20no%20site%20o%20Brownie%20de%20Oreo%20e%20gostaria%20de%20encomendar!%20Tem%20dispon%C3%ADvel%3F",
   },
   {
@@ -57,7 +57,7 @@ const FLAVORS = [
     title: "Brownie de Prestígio",
     desc: "Chocolate nobre com beijinho cremoso e coco ralado. Frescor tropical.",
     price: "R$ 6,00",
-    img: "./assets/prestigio.jpg",
+    img: "./assets/prestigio.jpeg",
     link: "https://wa.me/558594116448?text=Ol%C3%A1!%20Vi%20no%20site%20o%20Brownie%20de%20Prest%C3%ADgio%20e%20gostaria%20de%20encomendar!%20Tem%20dispon%C3%ADvel%3F",
   },
   {
@@ -65,7 +65,7 @@ const FLAVORS = [
     title: "Brownie de Doce de Leite",
     desc: "Massa de chocolate meio amargo com camadas generosas de doce de leite cremoso.",
     price: "R$ 6,00",
-    img: "./assets/doce-de-leite.jpg",
+    img: "./assets/doce-de-leite.jpeg",
     link: "https://wa.me/558594116448?text=Ol%C3%A1!%20Vi%20no%20site%20o%20Brownie%20de%20Doce%20de%20Leite%20e%20gostaria%20de%20encomendar!%20Tem%20dispon%C3%ADvel%3F",
   },
   {
