@@ -1115,3 +1115,27 @@ p {
     padding: 1.5rem;
   }
 }
+
+/* ----------------------------------------------------------------
+   20. PERSONALIZAÇÃO: BARRA DE ROLAGEM (CHROME/EDGE/SAFARI)
+   ---------------------------------------------------------------- */
+/* Esconde a barra padrão e cria uma barra fina e elegante */
+::-webkit-scrollbar {
+  width: 6px; /* Largura fina */
+  background-color: #1e0800; /* Fundo escuro igual ao site */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #2a0e05; /* Fundo da "trilha" levemente mais claro */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--gold); /* A alça (thumb) na cor dourada */
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--gold-light); /* Fica mais claro ao passar o mouse */
+}
