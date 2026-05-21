@@ -1,24 +1,12 @@
-// script.js — Mania de Brownie | Versão Final
+// ================================================================
+// MANIA DE BROWNIE - FUNÇÕES PRINCIPAIS
+// ================================================================
 
 "use strict";
 
-// ================================================================
-// 1. DADOS COM LINKAGEM DAS IMAGENS JÁ DEFINIDA
-// ================================================================
-// LISTA DE NOMES DAS IMAGENS PARA SALVAR:
-//
-// logo-brownie.png      -> Logo do site (ícone do círculo)
-// hero-brownie.jpg      -> Hero principal (foto do brownie em destaque)
-// bruna.jpg             -> Foto da Bruna (seção Sobre Mim)
-// tradicional.jpg       -> Brownie Tradicional
-// brigadeiro.jpg        -> Brownie de Brigadeiro
-// ninho.jpg             -> Brownie de Ninho
-// oreo.jpg              -> Brownie de Oreo
-// prestigio.jpg         -> Brownie de Prestígio
-// doce-de-leite.jpg     -> Brownie de Doce de Leite
-// ovomaltine.jpg        -> Brownie de Ovomaltine
-// ================================================================
-
+// ========== 1. DADOS DO CARDÁPIO (SABORES) ==========
+// ATENÇÃO: As imagens estão na pasta ./assets/
+// Para adicionar/editar um sabor, mexa aqui embaixo
 const FLAVORS = [
   {
     label: "O Autêntico",
@@ -78,7 +66,8 @@ const FLAVORS = [
   },
 ];
 
-// FEEDBACKS - VELOCIDADE AUMENTADA (25s no CSS)
+// ========== 2. DADOS DOS FEEDBACKS (DEPOIMENTOS) ==========
+// Os depoimentos rolam em duas faixas: uma da esquerda pra direita, outra da direita pra esquerda
 const FEEDBACKS_LTR = [
   "O melhor que já comi! Massa surreal de molhadinha.",
   "Viciada no Ninho Cremoso. Caminho sem volta!",
@@ -97,10 +86,7 @@ const FEEDBACKS_RTL = [
   "Textura de outro planeta. Muito macio!",
 ];
 
-// ================================================================
-// 2. RENDER — CARDS DE SABORES
-// ================================================================
-
+// ========== 3. FUNÇÃO: CRIA UM CARD DE SABOR ==========
 function createFlavorCard(flavor, index) {
   const card = document.createElement("article");
   card.className = "flavor-card reveal";
@@ -131,6 +117,7 @@ function createFlavorCard(flavor, index) {
   return card;
 }
 
+// ========== 4. FUNÇÃO: RENDERIZA TODOS OS SABORES NA TELA ==========
 function renderFlavors() {
   const grid = document.getElementById("flavors-grid");
   if (!grid) return;
@@ -142,10 +129,7 @@ function renderFlavors() {
   grid.appendChild(fragment);
 }
 
-// ================================================================
-// 3. RENDER — FEEDBACKS com estrelas SVG
-// ================================================================
-
+// ========== 5. FUNÇÃO: CRIA O ÍCONE DE ESTRELA (SVG) ==========
 function createStarsSVG() {
   return `
     <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -154,6 +138,7 @@ function createStarsSVG() {
   `;
 }
 
+// ========== 6. FUNÇÃO: CRIA 5 ESTRELAS (AVALIAÇÃO) ==========
 function createStarsHTML() {
   return (
     createStarsSVG() +
@@ -164,6 +149,7 @@ function createStarsHTML() {
   );
 }
 
+// ========== 7. FUNÇÃO: CRIA UM CARD DE FEEDBACK ==========
 function createFeedbackCard(text) {
   const card = document.createElement("div");
   card.className = "feedback-card";
@@ -176,11 +162,13 @@ function createFeedbackCard(text) {
   return card;
 }
 
+// ========== 8. FUNÇÃO: RENDERIZA OS FEEDBACKS (COM DUPLICAÇÃO PARA INFINITO) ==========
 function renderFeedbacks() {
   const trackLTR = document.getElementById("feedback-ltr");
   const trackRTL = document.getElementById("feedback-rtl");
   if (!trackLTR || !trackRTL) return;
 
+  // Duplica os arrays para criar o efeito de rolagem infinita
   const ltrItems = [...FEEDBACKS_LTR, ...FEEDBACKS_LTR];
   const rtlItems = [...FEEDBACKS_RTL, ...FEEDBACKS_RTL];
 
@@ -194,10 +182,7 @@ function renderFeedbacks() {
   trackRTL.appendChild(fragRTL);
 }
 
-// ================================================================
-// 4. HEADER — scroll effect
-// ================================================================
-
+// ========== 9. FUNÇÃO: MUDA O HEADER QUANDO ROLA A PÁGINA ==========
 function initHeaderScroll() {
   const header = document.getElementById("main-header");
   if (!header) return;
@@ -207,10 +192,7 @@ function initHeaderScroll() {
   update();
 }
 
-// ================================================================
-// 5. MENU MOBILE
-// ================================================================
-
+// ========== 10. FUNÇÃO: CONTROLE DO MENU MOBILE (HAMBÚRGUER) ==========
 function initMobileMenu() {
   const toggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("mobile-menu");
@@ -235,10 +217,7 @@ function initMobileMenu() {
   });
 }
 
-// ================================================================
-// 6. SMOOTH SCROLL
-// ================================================================
-
+// ========== 11. FUNÇÃO: ROLAGEM SUAVE (CLICAR NOS LINKS DO MENU) ==========
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
@@ -252,10 +231,7 @@ function initSmoothScroll() {
   });
 }
 
-// ================================================================
-// 7. SCROLL REVEAL
-// ================================================================
-
+// ========== 12. FUNÇÃO: REVELA ELEMENTOS QUANDO ENTRAM NA TELA ==========
 function initScrollReveal() {
   const elements = document.querySelectorAll(".reveal");
   if (!elements.length) return;
@@ -291,10 +267,7 @@ function initScrollReveal() {
   elements.forEach((el) => observer.observe(el));
 }
 
-// ================================================================
-// 8. HOVER IMEDIATO NOS CARDS
-// ================================================================
-
+// ========== 13. FUNÇÃO: OTIMIZA O HOVER NOS CARDS ==========
 function initCardHover() {
   const cards = document.querySelectorAll(
     ".flavor-card, .hero-card, .sobre-card, .contato-card, .feedback-card",
@@ -310,26 +283,20 @@ function initCardHover() {
   });
 }
 
-// ================================================================
-// 9. ANO ATUAL NO FOOTER
-// ================================================================
-
+// ========== 14. FUNÇÃO: COLOCA O ANO ATUAL NO RODAPÉ ==========
 function setCurrentYear() {
   const el = document.getElementById("current-year");
   if (el) el.textContent = new Date().getFullYear();
 }
 
-// ================================================================
-// 10. INICIALIZAÇÃO
-// ================================================================
-
+// ========== 15. INICIALIZAÇÃO (TUDO COMEÇA AQUI) ==========
 document.addEventListener("DOMContentLoaded", () => {
-  renderFlavors();
-  renderFeedbacks();
-  initHeaderScroll();
-  initMobileMenu();
-  initSmoothScroll();
-  initScrollReveal();
-  initCardHover();
-  setCurrentYear();
-});
+  renderFlavors();      // Monta os cards de sabores
+  renderFeedbacks();    // Monta os depoimentos rolantes
+  initHeaderScroll();   // Ativa efeito de transparência no header
+  initMobileMenu();     // Ativa menu hambúrguer no celular
+  initSmoothScroll();   // Atiza rolagem suave ao clicar nos links
+  initScrollReveal();   // Ativa animação de revelar ao rolar
+  initCardHover();      // Ajusta hover dos cards
+  setCurrentYear();     // Atualiza o ano do copyright
+}); 

@@ -4,27 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mania de Brownie | Brownies Artesanais Premium</title>
+    
+    <!-- Fontes do Google -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- Estilos principais -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- ==================== HEADER ==================== -->
+
+    <!-- ==================== CABEÇALHO / MENU ==================== -->
     <header id="main-header">
       <nav class="nav-container">
+        <!-- Logo (clica e volta para o topo) -->
         <a href="#home" class="nav-logo">
           <div class="logo-mark">
-            <!-- IMAGEM 1: LOGO DO SITE (ícone/círculo) -->
-            <!-- Salve como: logo-brownie.png (40x40px quadrado) -->
-            <!-- A imagem será redimensionada para caber no círculo -->
+            <!-- A imagem deve ficar em: ./assets/logo-brownie.png -->
             <img src="./assets/logo-brownie.png" alt="Logo Mania de Brownie" />
             <span class="logo-initials">MB</span>
           </div>
           <span class="logo-wordmark">MANIA DE BROWNIE</span>
         </a>
 
+        <!-- Menu desktop -->
         <ul class="nav-links">
           <li><a href="#home" class="nav-link">Home</a></li>
           <li><a href="#sabores" class="nav-link">Sabores</a></li>
@@ -33,6 +38,7 @@
           <li><a href="#contato" class="nav-link">Contato</a></li>
         </ul>
 
+        <!-- Botão do menu mobile (três barrinhas) -->
         <button
           id="menu-toggle"
           class="menu-toggle"
@@ -45,6 +51,7 @@
         </button>
       </nav>
 
+      <!-- Menu mobile (dropdown que abre embaixo) -->
       <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
         <ul>
           <li><a href="#home" class="mobile-link">Home</a></li>
@@ -57,7 +64,7 @@
     </header>
 
     <main>
-      <!-- ==================== HERO ==================== -->
+      <!-- ==================== SEÇÃO: HOME / HERO ==================== -->
       <section id="home" class="section hero-section">
         <div class="reveal" data-delay="0">
           <span class="eyebrow">Artesanal &amp; Premium</span>
@@ -66,8 +73,7 @@
 
         <div class="hero-card reveal" data-delay="80">
           <div class="hero-image-wrap">
-            <!-- IMAGEM 2: HERO PRINCIPAL (foto do brownie em destaque) -->
-            <!-- Salve como: hero-brownie.jpg (700x700px quadrado) -->
+            <!-- Imagem principal (destaque) - ./assets/hero-brownie.jpeg -->
             <img
               src="./assets/hero-brownie.jpeg"
               alt="Brownie Artesanal"
@@ -90,6 +96,7 @@
               clássicas por <strong class="accent">R$ 5,00</strong> e versões
               recheadas por apenas <strong class="accent">R$ 6,00</strong>.
             </p>
+            <!-- Botão principal do WhatsApp -->
             <a
               href="https://wa.me/558594116448?text=Ol%C3%A1!%20Vi%20o%20site%20e%20me%20interessei%20pelos%20brownies."
               target="_blank"
@@ -102,17 +109,17 @@
         </div>
       </section>
 
-      <!-- ==================== SABORES ==================== -->
+      <!-- ==================== SEÇÃO: SABORES (CARDÁPIO) ==================== -->
       <section id="sabores" class="section">
         <div class="reveal" data-delay="0">
           <span class="eyebrow">Nosso cardápio</span>
           <h2 class="section-title">Sabores</h2>
         </div>
-        <!-- CARDS DE SABORES GERADOS VIA JavaScript -->
+        <!-- Os cards de sabores são inseridos aqui via JavaScript (script.js) -->
         <div class="flavors-grid" id="flavors-grid"></div>
       </section>
 
-      <!-- ==================== FEEDBACKS ==================== -->
+      <!-- ==================== SEÇÃO: FEEDBACKS (DEPOIMENTOS ROLANTES) ==================== -->
       <section id="feedbacks" class="section feedback-section">
         <div class="reveal" data-delay="0">
           <span class="eyebrow">Depoimentos reais</span>
@@ -120,17 +127,18 @@
         </div>
 
         <div class="marquee-wrapper reveal" data-delay="100">
+          <!-- Faixa 1: rola da esquerda pra direita -->
           <div class="marquee-row">
             <div class="marquee-track marquee-ltr" id="feedback-ltr"></div>
           </div>
+          <!-- Faixa 2: rola da direita pra esquerda -->
           <div class="marquee-row">
             <div class="marquee-track marquee-rtl" id="feedback-rtl"></div>
           </div>
         </div>
       </section>
 
-      <!-- ==================== SOBRE MIM ==================== -->
-
+      <!-- ==================== SEÇÃO: SOBRE MIM ==================== -->
       <section id="sobre-mim" class="section">
         <div class="reveal" data-delay="0">
           <span class="eyebrow">A criadora</span>
@@ -139,9 +147,7 @@
 
         <div class="sobre-card reveal" data-delay="100">
           <div class="sobre-img-wrap">
-            <!-- IMAGEM 3: FOTO DA BRUNA (criadora) -->
-            <!-- Salve como: bruna.png (formato PNG com fundo transparente) -->
-            <!-- Tamanho sugerido: 400x500px (retrato) -->
+            <!-- Foto da Bruna - ./assets/bruna.png -->
             <img
               src="./assets/bruna.png"
               alt="Bruna — Mania de Brownie"
@@ -175,7 +181,7 @@
         </div>
       </section>
 
-      <!-- ==================== CONTATO ==================== -->
+      <!-- ==================== SEÇÃO: CONTATO ==================== -->
       <section id="contato" class="section">
         <div class="reveal" data-delay="0">
           <span class="eyebrow">Fale conosco</span>
@@ -189,55 +195,55 @@
             Estamos prontos para adoçar o seu dia.
           </p>
           <div class="contato-buttons">
-  <!-- LINKS DAS REDES SOCIAIS -->
-  <!-- Instagram: @maniadebrownie_ -->
-  <!-- WhatsApp: 85 99416-448 -->
-  <a
-    href="https://www.instagram.com/maniadebrownie.b?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-    target="_blank"
-    rel="noopener"
-    class="btn-outline"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path
-        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3"
-      />
-    </svg>
-    Instagram
-  </a>
-  <a
-    href="https://wa.me/558594116448?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido."
-    target="_blank"
-    rel="noopener"
-    class="btn-primary"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-      style="margin-right: 4px;"
-    >
-      <path
-        d="M12.032 2.027c-5.528 0-10.021 4.493-10.021 10.021 0 1.76.457 3.473 1.334 4.987L2 22.027l5.271-1.333c1.467.857 3.141 1.32 4.876 1.32 5.528 0 10.021-4.493 10.021-10.021 0-5.528-4.493-10.021-10.021-10.021zm0 18.038c-1.507 0-2.987-.4-4.267-1.16l-.307-.187-3.147.8.8-3.2-.2-.32c-.827-1.333-1.28-2.88-1.28-4.427 0-4.427 3.6-8.027 8.027-8.027s8.027 3.6 8.027 8.027-3.6 8.027-8.027 8.027zm4.373-6.027c-.213-.107-1.253-.613-1.44-.68-.213-.08-.36-.107-.52.107-.16.213-.613.693-.747.84-.16.16-.293.173-.533.053-.24-.107-1.013-.373-1.92-1.173-.707-.64-1.173-1.413-1.307-1.653-.133-.24-.013-.373.107-.493.107-.107.24-.267.36-.4.12-.133.16-.24.24-.4.08-.16.04-.293-.013-.427-.053-.133-.52-1.253-.693-1.693-.187-.48-.373-.373-.52-.373h-.44c-.16 0-.4.053-.613.293-.213.24-.813.8-.813 1.933 0 1.147.84 2.267.947 2.413.107.16 1.6 2.453 3.893 3.413 1.893.8 1.96.613 2.373.56.373-.053 1.2-.48 1.373-.96.16-.48.16-.893.107-.96-.027-.067-.12-.107-.347-.2z"
-      />
-    </svg>
-    Fazer pedido
-  </a>
-</div>
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/maniadebrownie.b?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener"
+              class="btn-outline"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3"
+                />
+              </svg>
+              Instagram
+            </a>
+            <!-- WhatsApp -->
+            <a
+              href="https://wa.me/558594116448?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido."
+              target="_blank"
+              rel="noopener"
+              class="btn-primary"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                style="margin-right: 4px;"
+              >
+                <path
+                  d="M12.032 2.027c-5.528 0-10.021 4.493-10.021 10.021 0 1.76.457 3.473 1.334 4.987L2 22.027l5.271-1.333c1.467.857 3.141 1.32 4.876 1.32 5.528 0 10.021-4.493 10.021-10.021 0-5.528-4.493-10.021-10.021-10.021zm0 18.038c-1.507 0-2.987-.4-4.267-1.16l-.307-.187-3.147.8.8-3.2-.2-.32c-.827-1.333-1.28-2.88-1.28-4.427 0-4.427 3.6-8.027 8.027-8.027s8.027 3.6 8.027 8.027-3.6 8.027-8.027 8.027zm4.373-6.027c-.213-.107-1.253-.613-1.44-.68-.213-.08-.36-.107-.52.107-.16.213-.613.693-.747.84-.16.16-.293.173-.533.053-.24-.107-1.013-.373-1.92-1.173-.707-.64-1.173-1.413-1.307-1.653-.133-.24-.013-.373.107-.493.107-.107.24-.267.36-.4.12-.133.16-.24.24-.4.08-.16.04-.293-.013-.427-.053-.133-.52-1.253-.693-1.693-.187-.48-.373-.373-.52-.373h-.44c-.16 0-.4.053-.613.293-.213.24-.813.8-.813 1.933 0 1.147.84 2.267.947 2.413.107.16 1.6 2.453 3.893 3.413 1.893.8 1.96.613 2.373.56.373-.053 1.2-.48 1.373-.96.16-.48.16-.893.107-.96-.027-.067-.12-.107-.347-.2z"
+                />
+              </svg>
+              Fazer pedido
+            </a>
+          </div>
         </div>
       </section>
     </main>
 
+    <!-- ==================== RODAPÉ ==================== -->
     <footer class="site-footer">
       <div class="footer-inner">
         <span class="footer-brand">MANIA DE BROWNIE</span>
@@ -248,6 +254,7 @@
       </div>
     </footer>
 
+    <!-- JavaScript principal -->
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,15 +1,13 @@
 /* ================================================================
-   style.css — Mania de Brownie | Versão Final Corrigida
-   Paleta:
+   MANIA DE BROWNIE - ESTILOS PRINCIPAIS
+   Paleta de cores:
      #210900  fundo principal
      #42160B  superfície dos cards
      #DEA85C  dourado (acento)
      #ffffff  texto
    ================================================================ */
 
-/* ----------------------------------------------------------------
-   1. RESET & BOX MODEL
-   ---------------------------------------------------------------- */
+/* ========== 1. RESET E CONFIGURAÇÕES GLOBAIS ========== */
 *,
 *::before,
 *::after {
@@ -36,21 +34,22 @@ img {
   display: block;
   max-width: 100%;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 ul {
   list-style: none;
 }
+
 p {
   color: rgba(255, 255, 255, 0.85);
   font-family: "DM Sans", sans-serif;
 }
 
-/* ----------------------------------------------------------------
-   2. VARIÁVEIS
-   ---------------------------------------------------------------- */
+/* ========== 2. VARIÁVEIS (CORES, SOMBRAS, BORDAS) ========== */
 :root {
   --bg: #210900;
   --surface: #42160b;
@@ -77,17 +76,13 @@ p {
   --t-fast: 0.2s ease-out;
 }
 
-/* ----------------------------------------------------------------
-   3. UTILITÁRIOS
-   ---------------------------------------------------------------- */
+/* ========== 3. UTILITÁRIOS RÁPIDOS ========== */
 .accent {
   color: var(--gold);
   font-weight: 600;
 }
 
-/* ----------------------------------------------------------------
-   4. SCROLL REVEAL
-   ---------------------------------------------------------------- */
+/* ========== 4. ANIMAÇÃO DE REVELAR AO ROLAR A PÁGINA ========== */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -100,9 +95,7 @@ p {
   transform: translateY(0);
 }
 
-/* ----------------------------------------------------------------
-   5. TIPOGRAFIA ELEGANTE
-   ---------------------------------------------------------------- */
+/* ========== 5. TIPOGRAFIA (TÍTULOS E EYEBROWS) ========== */
 .eyebrow {
   display: block;
   font-family: "DM Sans", sans-serif;
@@ -126,6 +119,7 @@ p {
   margin-bottom: 2rem;
   padding-bottom: 0.8rem;
 }
+
 .section-title::after {
   content: "";
   position: absolute;
@@ -137,9 +131,7 @@ p {
   border-radius: 9999px;
 }
 
-/* ----------------------------------------------------------------
-   6. LAYOUT
-   ---------------------------------------------------------------- */
+/* ========== 6. LAYOUT BASE DAS SEÇÕES ========== */
 .section {
   padding: 2.5rem var(--padding);
 }
@@ -148,9 +140,7 @@ p {
   border-top: 1px solid rgba(222, 168, 92, 0.04);
 }
 
-/* ----------------------------------------------------------------
-   7. HEADER ELEGANTE
-   ---------------------------------------------------------------- */
+/* ========== 7. CABEÇALHO (HEADER) E MENU ========== */
 #main-header {
   position: sticky;
   top: 0;
@@ -159,6 +149,7 @@ p {
   background-color: transparent;
   transition: all 0.4s ease;
 }
+
 #main-header.scrolled {
   background-color: rgba(33, 9, 0, 0.96);
   backdrop-filter: blur(16px);
@@ -174,18 +165,19 @@ p {
   position: relative;
 }
 
+/* Logo */
 .nav-logo {
   display: flex;
   align-items: center;
   gap: 0.8rem;
   transition: all 0.3s ease;
 }
+
 .nav-logo:hover {
   opacity: 0.7;
   transform: scale(0.98);
 }
 
-/* LOGO MAIOR */
 .logo-mark {
   width: 3rem;
   height: 3rem;
@@ -236,39 +228,21 @@ p {
   opacity: 0.9;
 }
 
-/* Tablet */
+/* Tamanhos do logo por dispositivo */
 @media (min-width: 640px) and (max-width: 1023px) {
-  .logo-mark {
-    width: 2.8rem;
-    height: 2.8rem;
-  }
-  .logo-wordmark {
-    font-size: 0.85rem;
-  }
+  .logo-mark { width: 2.8rem; height: 2.8rem; }
+  .logo-wordmark { font-size: 0.85rem; }
 }
-
-/* Desktop */
 @media (min-width: 1024px) {
-  .logo-mark {
-    width: 3.2rem;
-    height: 3.2rem;
-  }
-  .logo-wordmark {
-    font-size: 1rem;
-  }
+  .logo-mark { width: 3.2rem; height: 3.2rem; }
+  .logo-wordmark { font-size: 1rem; }
 }
-
-/* Mobile pequeno */
 @media (max-width: 639px) {
-  .logo-mark {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-  .logo-wordmark {
-    font-size: 0.7rem;
-  }
+  .logo-mark { width: 2.5rem; height: 2.5rem; }
+  .logo-wordmark { font-size: 0.7rem; }
 }
 
+/* Links de navegação (desktop) */
 .nav-links {
   display: flex;
   align-items: center;
@@ -302,11 +276,11 @@ p {
 .nav-link:hover {
   color: var(--gold);
 }
-
 .nav-link:hover::after {
   width: 100%;
 }
 
+/* Botão do menu hambúrguer (mobile) */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -319,6 +293,7 @@ p {
   cursor: pointer;
   padding: 0.1rem;
 }
+
 .bar {
   display: block;
   width: 100%;
@@ -327,6 +302,7 @@ p {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
+
 .menu-toggle.active .bar:nth-child(1) {
   transform: translateY(6.5px) rotate(45deg);
 }
@@ -338,6 +314,7 @@ p {
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
+/* Menu mobile (dropdown) */
 .mobile-menu {
   max-height: 0;
   overflow: hidden;
@@ -346,6 +323,7 @@ p {
   background-color: rgba(33, 9, 0, 0.98);
   border-top: 1px solid var(--border);
 }
+
 .mobile-menu.open {
   max-height: 28rem;
   opacity: 1;
@@ -363,14 +341,13 @@ p {
   border-bottom: 1px solid var(--border);
   transition: all 0.25s ease;
 }
+
 .mobile-link:hover {
   color: var(--gold);
   padding-left: 0.5rem;
 }
 
-/* ----------------------------------------------------------------
-   8. BOTÕES CHIQUES - CORRIGIDO (BOTÃO LARGURA TOTAL NO MOBILE)
-   ================================================================ */
+/* ========== 8. BOTÕES (PADRÕES E DO CARDÁPIO) ========== */
 .btn-primary,
 .btn-outline {
   display: inline-flex;
@@ -418,6 +395,7 @@ p {
   width: 100%;
 }
 
+/* Efeito de onda ao passar o mouse */
 .btn-primary::before,
 .btn-outline::before,
 .btn-card::before {
@@ -430,9 +408,7 @@ p {
   border-radius: 50%;
   background: rgba(222, 168, 92, 0.2);
   transform: translate(-50%, -50%);
-  transition:
-    width 0.5s ease,
-    height 0.5s ease;
+  transition: width 0.5s ease, height 0.5s ease;
 }
 
 .btn-primary:hover::before,
@@ -458,9 +434,7 @@ p {
   transform: translateY(-1px);
 }
 
-/* ----------------------------------------------------------------
-   9. HERO CARD - CORRIGIDO (IMAGEM SEM CORTE)
-   ================================================================ */
+/* ========== 9. SEÇÃO HERO (PRIMEIRA TELA) ========== */
 .hero-section {
   padding-top: 2rem;
 }
@@ -495,7 +469,6 @@ p {
   border-color: var(--border-hover);
   box-shadow: var(--shadow-hover);
 }
-
 .hero-card:hover::before {
   box-shadow: var(--glow-chique);
 }
@@ -504,7 +477,6 @@ p {
   border-radius: 1rem;
   overflow: hidden;
   width: 100%;
-  /* Remove o aspect-ratio fixo para não cortar a imagem */
 }
 
 .hero-img {
@@ -513,7 +485,6 @@ p {
   display: block;
   transition: transform 0.5s ease;
 }
-
 .hero-card:hover .hero-img {
   transform: scale(1.04);
 }
@@ -554,9 +525,7 @@ p {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* ----------------------------------------------------------------
-   10. FLAVORS GRID - CORRIGIDO (IMAGEM LARGURA TOTAL)
-   ================================================================ */
+/* ========== 10. CARDÁPIO (SABORES) ========== */
 .flavors-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -593,7 +562,6 @@ p {
   border-color: var(--border-hover);
   box-shadow: var(--shadow-hover);
 }
-
 .flavor-card:hover::before {
   box-shadow: var(--glow-chique);
 }
@@ -611,7 +579,6 @@ p {
   object-fit: cover;
   transition: transform 0.5s ease;
 }
-
 .flavor-card:hover .flavor-img-wrap img {
   transform: scale(1.05);
 }
@@ -654,9 +621,7 @@ p {
   font-family: "DM Sans", sans-serif;
 }
 
-/* ----------------------------------------------------------------
-   11. FEEDBACKS
-   ================================================================ */
+/* ========== 11. FEEDBACKS (DEPOIMENTOS ROLANTES) ========== */
 .feedback-section {
   padding-bottom: 2.5rem;
 }
@@ -680,20 +645,12 @@ p {
 }
 
 @keyframes marquee-ltr {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 @keyframes marquee-rtl {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
 }
 
 .marquee-ltr {
@@ -737,7 +694,6 @@ p {
   stroke: none;
   transition: transform 0.2s ease;
 }
-
 .feedback-card:hover .star-icon {
   transform: scale(1.05);
 }
@@ -751,9 +707,7 @@ p {
   margin: 0;
 }
 
-/* ----------------------------------------------------------------
-   12. SOBRE MIM
-   ================================================================ */
+/* ========== 12. SEÇÃO SOBRE MIM ========== */
 .sobre-card {
   position: relative;
   display: grid;
@@ -785,7 +739,6 @@ p {
   border-color: var(--border-hover);
   box-shadow: var(--shadow-hover);
 }
-
 .sobre-card:hover::before {
   box-shadow: var(--glow-chique);
 }
@@ -832,63 +785,7 @@ p {
   color: rgba(255, 255, 255, 0.88);
 }
 
-/* Tablet */
-@media (min-width: 640px) and (max-width: 1023px) {
-  .sobre-card {
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 2rem;
-    align-items: start;
-  }
-  .sobre-img-wrap {
-    max-height: 350px;
-  }
-  .sobre-content p {
-    font-size: 1rem;
-    line-height: 1.8;
-  }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-  .sobre-card {
-    grid-template-columns: 0.75fr 1.25fr;
-    gap: 3rem;
-    padding: 2.5rem;
-    align-items: start;
-  }
-  .sobre-img-wrap {
-    max-width: 100%;
-    max-height: 450px;
-    margin: 0;
-  }
-  .sobre-heading {
-    font-size: 2rem;
-  }
-  .sobre-content p {
-    font-size: 1.05rem;
-    line-height: 1.85;
-  }
-}
-
-/* Mobile pequeno */
-@media (max-width: 639px) {
-  .sobre-card {
-    align-items: start;
-    gap: 1.5rem;
-    padding: 1.5rem;
-  }
-  .sobre-heading {
-    font-size: 1.4rem;
-  }
-  .sobre-content p {
-    font-size: 0.95rem;
-    line-height: 1.75;
-  }
-}
-
-/* ----------------------------------------------------------------
-   13. CONTATO - BOTÕES CORRIGIDOS (LARGURA TOTAL NO MOBILE)
-   ================================================================ */
+/* ========== 13. SEÇÃO CONTATO ========== */
 .contato-card {
   position: relative;
   padding: 2.5rem 1.5rem;
@@ -917,7 +814,6 @@ p {
   border-color: var(--border-hover);
   box-shadow: var(--shadow-hover);
 }
-
 .contato-card:hover::before {
   box-shadow: var(--glow-chique);
 }
@@ -930,7 +826,6 @@ p {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* MOBILE: botões um embaixo do outro com largura total */
 .contato-buttons {
   display: flex;
   flex-direction: column;
@@ -946,9 +841,7 @@ p {
   width: 100%;
 }
 
-/* ----------------------------------------------------------------
-   14. FOOTER
-   ---------------------------------------------------------------- */
+/* ========== 14. RODAPÉ (FOOTER) ========== */
 .site-footer {
   padding: 2rem var(--padding);
   border-top: 1px solid rgba(222, 168, 92, 0.06);
@@ -967,11 +860,11 @@ p {
   font-weight: 400;
   font-size: 0.7rem;
   letter-spacing: 0.25em;
+  text-transform: uppercase;
   color: var(--gold);
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
-
 .footer-brand:hover {
   opacity: 1;
 }
@@ -983,21 +876,17 @@ p {
   letter-spacing: 0.05em;
 }
 
-/* ----------------------------------------------------------------
-   15. RESPONSIVE — TABLET
-   ---------------------------------------------------------------- */
+/* ========== 15. RESPONSIVIDADE (ADAPTAÇÃO POR TAMANHO DE TELA) ========== */
+/* Tablet */
 @media (min-width: 640px) {
   .flavors-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* TABLET: botões lado a lado */
   .contato-buttons {
     flex-direction: row;
     justify-content: center;
     gap: 1.5rem;
   }
-  
   .contato-buttons .btn-outline,
   .contato-buttons .btn-primary {
     width: auto;
@@ -1005,9 +894,7 @@ p {
   }
 }
 
-/* ----------------------------------------------------------------
-   16. RESPONSIVE — DESKTOP
-   ---------------------------------------------------------------- */
+/* Desktop */
 @media (min-width: 1024px) {
   .section {
     padding: 3.5rem var(--padding);
@@ -1015,47 +902,36 @@ p {
   .section-title {
     margin-bottom: 2.8rem;
   }
-
   .nav-links {
     display: flex;
   }
   .menu-toggle {
     display: none;
   }
-
   .hero-card {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     padding: 3rem;
   }
-  
-
   .flavors-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-  
-  /* DESKTOP: imagem e texto lado a lado */
   .flavor-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     padding: 2rem;
   }
-  
   .flavor-img-wrap {
     max-height: none;
   }
-  
-  /* DESKTOP: botão volta ao tamanho normal */
   .btn-card {
     width: auto;
   }
-
   .feedback-card {
     width: 20rem;
   }
-
   .sobre-card {
     grid-template-columns: 0.8fr 1.2fr;
     gap: 2.5rem;
@@ -1066,20 +942,16 @@ p {
     max-height: 420px;
     margin: 0 auto;
   }
-
   .contato-card {
     padding: 4rem;
   }
-
   .footer-inner {
     flex-direction: row;
     justify-content: space-between;
   }
 }
 
-/* ----------------------------------------------------------------
-   17. RESPONSIVE — MOBILE
-   ---------------------------------------------------------------- */
+/* Esconde menu desktop no mobile e mostra hambúrguer */
 @media (max-width: 1023px) {
   .nav-links {
     display: none;
@@ -1089,53 +961,41 @@ p {
   }
 }
 
-/* ----------------------------------------------------------------
-   18. MOBILE - AJUSTES FINAIS
-   ---------------------------------------------------------------- */
+/* Ajustes para mobile pequeno */
 @media (max-width: 639px) {
   .sobre-card {
     align-items: start;
   }
-  
   .contato-buttons .btn-outline,
   .contato-buttons .btn-primary {
     width: 100%;
   }
-  
   .hero-image-wrap {
     aspect-ratio: 1 / 1;
   }
 }
 
-/* ----------------------------------------------------------------
-   19. CORREÇÕES FINAIS
-   ---------------------------------------------------------------- */
+/* Ajuste extra para telas muito pequenas */
 @media (max-width: 767px) {
   .hero-card {
     padding: 1.5rem;
   }
 }
 
-/* ----------------------------------------------------------------
-   20. PERSONALIZAÇÃO: BARRA DE ROLAGEM (CHROME/EDGE/SAFARI)
-   ---------------------------------------------------------------- */
-/* Esconde a barra padrão e cria uma barra fina e elegante */
+/* ========== 16. BARRA DE ROLAGEM PERSONALIZADA ========== */
 ::-webkit-scrollbar {
-  width: 6px; /* Largura fina */
-  background-color: #1e0800; /* Fundo escuro igual ao site */
+  width: 6px;
+  background-color: #1e0800;
 }
-
 ::-webkit-scrollbar-track {
-  background-color: #2a0e05; /* Fundo da "trilha" levemente mais claro */
+  background-color: #2a0e05;
   border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb {
-  background-color: var(--gold); /* A alça (thumb) na cor dourada */
+  background-color: var(--gold);
   border-radius: 10px;
   transition: background-color 0.2s ease;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--gold-light); /* Fica mais claro ao passar o mouse */
+  background-color: var(--gold-light);
 }
